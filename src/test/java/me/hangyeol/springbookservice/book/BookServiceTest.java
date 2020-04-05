@@ -18,7 +18,7 @@ public class BookServiceTest {
     public void save() {
         Book book = new Book();
 
-        when(bookRepository.save(book)).thenReturn(book);
+//        when(bookRepository.save(book)).thenReturn(book);
 //        BookService bookService = new BookService(bookRepository);
 
 //        Book result = bookService.save(book);

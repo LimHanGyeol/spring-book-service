@@ -2,6 +2,6 @@ package me.hangyeol.springbookservice.book;
 
 import org.springframework.stereotype.Repository;
 
-public interface BookRepository {
-
+@Repository
+public class MyBookRepository implements BookRepository{
 }
