@@ -5,6 +5,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@Profile("!prod")
+@Profile("test")
 public class TestBookRepository implements TestRepository{
 }
