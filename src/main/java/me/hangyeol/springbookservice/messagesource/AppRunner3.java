@@ -19,11 +19,11 @@ public class AppRunner3 implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("message source");
-        while (true) {
+//        while (true) {
             System.out.println(messageSource.getMessage("greeting", new String[]{"hangyeol"}, Locale.KOREA));
             System.out.println(messageSource.getMessage("greeting", new String[]{"hangyeol"}, Locale.ENGLISH));
-            Thread.sleep(1000);
-        }
+//            Thread.sleep(1000);
+//        }
 
 
     }
