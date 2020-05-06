@@ -1,4 +1,4 @@
-package me.hangyeol.springbookservice.resource;
+package me.hangyeol.springbookservice.resourceabstraction;
 
 import javax.validation.constraints.*;
 

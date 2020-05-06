@@ -1,4 +1,4 @@
-package me.hangyeol.springbookservice.resource;
+package me.hangyeol.springbookservice.resourceabstraction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
