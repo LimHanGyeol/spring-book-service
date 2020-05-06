@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EventController {
 
-    @InitBinder
-    public void init(WebDataBinder webDataBinder) {
-        webDataBinder.registerCustomEditor(Event2.class, new EventEditor());
-    }
+//    @InitBinder
+//    public void init(WebDataBinder webDataBinder) {
+//        webDataBinder.registerCustomEditor(Event2.class, new EventEditor());
+//    }
+
+
 
     @GetMapping("/event/{event2}")
     public String getEvent(@PathVariable Event2 event2) {
