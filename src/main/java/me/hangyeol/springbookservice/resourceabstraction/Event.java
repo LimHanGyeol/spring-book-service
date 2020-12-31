@@ -1,6 +1,10 @@
 package me.hangyeol.springbookservice.resourceabstraction;
 
-import javax.validation.constraints.*;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class Event {
 
@@ -9,7 +13,8 @@ public class Event {
     @NotEmpty
     String title;
 
-    @NotNull @Min(0)
+    @NotNull
+    @Min(0)
     Integer limit;
 
     @Email
