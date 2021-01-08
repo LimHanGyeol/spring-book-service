@@ -1,29 +1,33 @@
-package me.hangyeol.springbookservice.beanscope;
+package me.hangyeol.springbookservice.container.scope;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
+/**
+ * Section1. IoC 컨테이너와 빈
+ * 5부 : Bean 의 Scope
+ */
 @Component
-public class AppRunner1 implements ApplicationRunner {
+public class BeanScopeRunner implements ApplicationRunner {
 
-    /*
-    @Autowired
-    Single single;
-    @Autowired
-    Proto proto;
-     */
+    private final Single single;
+    private final Proto proto;
+    private final ApplicationContext ctx;
 
-    @Autowired
-    ApplicationContext ctx;
+    public BeanScopeRunner(Single single, Proto proto, ApplicationContext ctx) {
+        this.single = single;
+        this.proto = proto;
+        this.ctx = ctx;
+    }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-//        Singleton type instacne references check
-//        System.out.println(proto);
-//        System.out.println(single.getProto());
+        System.out.println("Singleton type instance references check."); // 같은 주소값이 출력된다.
+        System.out.println(proto);
+        System.out.println(single.getProto());
+        System.out.println(proto);
 
         System.out.println("proto");
         System.out.println(ctx.getBean(Proto.class));
@@ -39,7 +43,6 @@ public class AppRunner1 implements ApplicationRunner {
         System.out.println(ctx.getBean(Single.class).getProto());
         System.out.println(ctx.getBean(Single.class).getProto());
         System.out.println(ctx.getBean(Single.class).getProto());
-
-
     }
+
 }
