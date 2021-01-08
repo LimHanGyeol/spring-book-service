@@ -1,4 +1,4 @@
-package me.hangyeol.springbookservice.book;
+package me.hangyeol.springbookservice.container.domain;
 
 import java.util.Date;
 
