@@ -1,7 +1,6 @@
-package me.hangyeol.springbookservice.environment;
+package me.hangyeol.springbookservice.container.environment;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.ApplicationContext;
@@ -10,8 +9,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
+/**
+ * Section1. IoC 컨테이너와 빈
+ * 6부 : Environment Profile
+ */
 @Component
-public class AppRunner2 implements ApplicationRunner {
+public class EnvironmentRunner implements ApplicationRunner {
 
     @Autowired
     ApplicationContext ctx;
@@ -19,8 +22,8 @@ public class AppRunner2 implements ApplicationRunner {
     @Autowired
     TestBookRepository testBookRepository;
 
-    @Value("${app.name}")
-    String appName;
+//    @Value("${app.name}")
+//    String appName;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -35,6 +38,6 @@ public class AppRunner2 implements ApplicationRunner {
         System.out.println(environment.getProperty("app.about"));
 
         System.out.println("app Name");
-        System.out.println(appName);
+//        System.out.println(appName);
     }
 }

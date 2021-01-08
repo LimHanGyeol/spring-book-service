@@ -32,7 +32,6 @@ public class BookServiceRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        bookService.printBookRepository();
         AutowiredAnnotationBeanPostProcessor bean = applicationContext.getBean(AutowiredAnnotationBeanPostProcessor.class);
         System.out.println(bean);
     }

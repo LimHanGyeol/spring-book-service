@@ -18,8 +18,6 @@ import java.util.List;
 @Service
 public class BookService {
 
-     private List<BookRepository> bookRepositories;
-
     // @Autowired TODO : field 에 @Autowired 를 선언하여 주입할 수 있다. 역시 required 옵션을 사용할 수 있다.
     // @Qualifier("hangyeolBookRepository") TODO : 스몰케이스를 이용하여 특정 Bean 의 Id 를 주입하여 특정할 수 있다.
     private final BookRepository bookRepository;
@@ -32,11 +30,6 @@ public class BookService {
     // public void setBookRepository(BookRepository bookRepository) {
     //     this.bookRepository = bookRepository;
     // }
-
-    public void printBookRepository() {
-        this.bookRepositories.forEach(System.out::println);
-        System.out.println(bookRepository.getClass());
-    }
 
     public Book save(Book book) {
         book.setCreated(new Date());
