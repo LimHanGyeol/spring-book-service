@@ -10,7 +10,7 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
-@PropertySource("classpath:/app.properties")
+@PropertySource("classpath:/application-prod.properties")
 @EnableAsync
 public class SpringBookServiceApplication {
 
