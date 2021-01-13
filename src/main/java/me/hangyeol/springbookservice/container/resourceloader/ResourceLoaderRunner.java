@@ -2,8 +2,8 @@ package me.hangyeol.springbookservice.container.resourceloader;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,9 +13,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class ResourceLoaderRunner implements ApplicationRunner {
 
-    private final ResourceLoader resourceLoader;
+    private final ApplicationContext resourceLoader;
 
-    public ResourceLoaderRunner(ResourceLoader resourceLoader) {
+    public ResourceLoaderRunner(ApplicationContext resourceLoader) {
         this.resourceLoader = resourceLoader;
     }
 
@@ -25,10 +25,11 @@ public class ResourceLoaderRunner implements ApplicationRunner {
 
         System.out.println(resourceLoader.getClass());
 
-        Resource resource = resourceLoader.getResource("test.txt");
-
+        Resource resource = resourceLoader.getResource("classpath:test.txt");
         System.out.println(resource.getClass());
+
         System.out.println(resource.exists());
         System.out.println(resource.getDescription());
     }
+
 }
