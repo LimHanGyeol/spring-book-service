@@ -18,11 +18,13 @@ import java.util.Arrays;
 @Component
 public class EnvironmentRunner implements ApplicationRunner {
 
-    @Autowired
-    ApplicationContext ctx;
+    private final ApplicationContext ctx;
+    private final TestBookRepository testBookRepository;
 
-    @Autowired
-    TestBookRepository testBookRepository;
+    public EnvironmentRunner(ApplicationContext ctx, TestBookRepository testBookRepository) {
+        this.ctx = ctx;
+        this.testBookRepository = testBookRepository;
+    }
 
     @Value("${app.about}")
     String appName;

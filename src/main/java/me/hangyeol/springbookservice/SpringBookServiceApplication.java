@@ -30,5 +30,4 @@ public class SpringBookServiceApplication {
         return messageSource;
     }
 
-
 }
