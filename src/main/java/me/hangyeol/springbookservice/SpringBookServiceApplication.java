@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
 @PropertySource("classpath:/application-prod.properties")
-@EnableAsync
+@EnableAsync // EventPublisher Async 설정
 public class SpringBookServiceApplication {
 
     public static void main(String[] args) {

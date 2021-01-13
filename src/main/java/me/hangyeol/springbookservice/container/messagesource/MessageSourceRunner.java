@@ -26,5 +26,5 @@ public class MessageSourceRunner implements ApplicationRunner {
             System.out.println(messageSource.getMessage("greeting", new String[]{"hangyeol"}, Locale.KOREA));
             System.out.println(messageSource.getMessage("greeting", new String[]{"hangyeol"}, Locale.ENGLISH));
     }
-    
+
 }
