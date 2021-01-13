@@ -1,31 +1,34 @@
-package me.hangyeol.springbookservice.resourceloader;
+package me.hangyeol.springbookservice.container.resourceloader;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
-import java.nio.file.Files;
-
+/**
+ * Section1. IoC 컨테이너와 빈
+ * 9부 : ResourceLoader
+ */
 @Component
-public class AppRunner5 implements ApplicationRunner {
+public class ResourceLoaderRunner implements ApplicationRunner {
 
-    @Autowired
-    ApplicationContext resourceLoader;
+    private final ResourceLoader resourceLoader;
+
+    public ResourceLoaderRunner(ResourceLoader resourceLoader) {
+        this.resourceLoader = resourceLoader;
+    }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        System.out.println("=== resourceLoader");
+        System.out.println("=========== ResourceLoader");
 
         System.out.println(resourceLoader.getClass());
 
         Resource resource = resourceLoader.getResource("test.txt");
+
         System.out.println(resource.getClass());
         System.out.println(resource.exists());
-        System.out.println();
         System.out.println(resource.getDescription());
     }
 }

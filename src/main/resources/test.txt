@@ -1,1 +1,1 @@
-hello spring
+resource spring
