@@ -2,6 +2,10 @@ package me.hangyeol.springbookservice.aop;
 
 import org.springframework.stereotype.Service;
 
+/**
+ * Section5. Spring AOP
+ * Proxy 기반 AOP
+ */
 @Service
 public class SimpleEventService implements EventService{
 
