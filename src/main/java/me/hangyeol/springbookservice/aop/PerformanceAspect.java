@@ -14,23 +14,35 @@ import org.springframework.stereotype.Component;
  * Pointcut : 적용할 지점 (어디에 적용해야 하는지)
  * JoinPoint : 구체적인 실행 시점
  */
-@Aspect
 @Component
+@Aspect
 public class PerformanceAspect {
 
+    // pointcut 을 정의할 수 있다.
 //    @Around("execution(* me.hangyeol.springbookservice.aop.EventService.*(..))")
-    @Around("@annotation(PerfLogging)")
+//    @Around("@annotation(PerfLogging)")
 //    @Around("bean(simpleEventService)")
+
+    /**
+     *
+     * @param pjp ProceedingJoinPoint 어드바이스가 적용되는 대상 Ex. createEvent, publishEvent
+     * @return
+     * @throws Throwable
+     */
+    @Around("@annotation(PerfLogging)")
     public Object logPerf(ProceedingJoinPoint pjp) throws Throwable {
         long begin = System.currentTimeMillis();
+
+        // ProceedingJoinPoint 어드바이스가 적용되는 대상 Ex) createEvent, publishEvent
         Object retVal = pjp.proceed();
+
         System.out.println(System.currentTimeMillis() - begin);
         return retVal;
     }
 
     @Before("bean(simpleEventService)")
     public void hello() {
-        System.out.println("hello");
+        System.out.print("hello");
     }
 }
 

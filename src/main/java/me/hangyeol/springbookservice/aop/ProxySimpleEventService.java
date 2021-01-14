@@ -9,32 +9,32 @@ import org.springframework.stereotype.Service;
  * SimpleEventService 의 메서드를 delegate. 위임하여 추가 기능을 구현했다.
  * 그리고 @Primary 로 EventService 객체를 주입할 때 PoxySimpleEventService 를 주입하게 특정했다.
  */
-@Primary
-@Service
+//@Primary
+//@Service
 public class ProxySimpleEventService implements EventService{
 
-    private final SimpleEventService simpleEventService;
+    // private final SimpleEventService simpleEventService;
 
-    public ProxySimpleEventService(SimpleEventService simpleEventService) {
-        this.simpleEventService = simpleEventService;
-    }
+//    public ProxySimpleEventService(SimpleEventService simpleEventService) {
+//        this.simpleEventService = simpleEventService;
+//    }
 
     @Override
     public void createEvent() {
-        long begin = System.currentTimeMillis();
-        simpleEventService.createEvent();
-        System.out.println(System.currentTimeMillis() - begin);
+//        long begin = System.currentTimeMillis();
+//        simpleEventService.createEvent();
+//        System.out.println(System.currentTimeMillis() - begin);
     }
 
     @Override
     public void publishEvent() {
-        long begin = System.currentTimeMillis();
-        simpleEventService.publishEvent();
-        System.out.println(System.currentTimeMillis() - begin);
+//        long begin = System.currentTimeMillis();
+//        simpleEventService.publishEvent();
+//        System.out.println(System.currentTimeMillis() - begin);
     }
 
     @Override
     public void deleteEvent() {
-        simpleEventService.deleteEvent();
+//        simpleEventService.deleteEvent();
     }
 }
