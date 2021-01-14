@@ -3,7 +3,6 @@ package me.hangyeol.springbookservice.databinding;
 import me.hangyeol.springbookservice.resourceabstraction.Event;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -16,10 +15,10 @@ import javax.validation.Valid;
 public class EventController {
 
     // InitBinder 로 컨트롤러에서 사용할 PropertyEditor 를 정의한다.
-    @InitBinder
-    public void init(WebDataBinder webDataBinder) {
-        webDataBinder.registerCustomEditor(Event.class, new EventEditor());
-    }
+    //@InitBinder
+    //public void init(WebDataBinder webDataBinder) {
+    //    webDataBinder.registerCustomEditor(Event.class, new EventEditor());
+    //}
 
     @GetMapping("/event/{event}")
     public String getEvent(@PathVariable Event event) {
@@ -38,6 +37,5 @@ public class EventController {
         }
         return ResponseEntity.ok().body(event);
     }
-
 
 }

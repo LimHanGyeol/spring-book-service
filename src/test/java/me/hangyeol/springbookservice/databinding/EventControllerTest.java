@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Section3. DataBinding
  * DataBinding 추상화. PropertyEditor Test
  */
-@WebMvcTest({EventConverter.stringToEventConverter.class, EventController.class})
+@WebMvcTest({EventConverter.StringToEventConverter.class, EventController.class})
 public class EventControllerTest {
 
     @Autowired
