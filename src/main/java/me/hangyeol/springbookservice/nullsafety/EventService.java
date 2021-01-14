@@ -8,6 +8,7 @@ public class EventService {
 
     @NonNull
     public String createEvent(@NonNull String name) {
-        return "hello" + name;
+        return "Null-safety : " + name;
     }
+
 }
