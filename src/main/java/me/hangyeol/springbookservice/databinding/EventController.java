@@ -8,27 +8,35 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+/**
+ * Section3. DataBinding
+ * DataBinding 추상화. PropertyEditor
+ */
 @RestController
 public class EventController {
 
-//    @InitBinder
-//    public void init(WebDataBinder webDataBinder) {
-//        webDataBinder.registerCustomEditor(Event2.class, new EventEditor());
-//    }
+    // InitBinder 로 컨트롤러에서 사용할 PropertyEditor 를 정의한다.
+    @InitBinder
+    public void init(WebDataBinder webDataBinder) {
+        webDataBinder.registerCustomEditor(Event.class, new EventEditor());
+    }
 
+    @GetMapping("/event/{event}")
+    public String getEvent(@PathVariable Event event) {
+        System.out.println(event);
+        return event.getId().toString();
+    }
+
+    /**
+     * Validation 확인하는 컨트롤러
+     */
     @PostMapping("/event")
     public ResponseEntity<Event> create(@Valid @RequestBody Event event,
                                         Errors errors) {
         if (errors.hasErrors()) {
             return ResponseEntity.badRequest().build();
         }
-        return ResponseEntity.ok(event);
-    }
-
-    @GetMapping("/event/{event2}")
-    public String getEvent(@PathVariable Event2 event2) {
-        System.out.println(event2);
-        return event2.getId().toString();
+        return ResponseEntity.ok().body(event);
     }
 
 

@@ -7,8 +7,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
- * Section2. Resource / Validation
- * Validation 추상화
+ * Section2. Resource / Validation, Section3. DataBinding
+ * Validation 추상화, DataBinding 추상화. PropertyEditor
  */
 public class Event {
 
@@ -24,15 +24,40 @@ public class Event {
     @Email
     String email;
 
-    public void setTitle(String title) {
+    public Event(Integer id) {
+        this.id = id;
+    }
+
+    public Event(Integer id, String title, Integer limit, String email) {
+        this.id = id;
         this.title = title;
-    }
-
-    public void setLimit(Integer limit) {
         this.limit = limit;
+        this.email = email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public Integer getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", limit=" + limit +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

@@ -21,15 +21,12 @@ public class ValidatorRunner implements ApplicationRunner {
     @Autowired
     Validator validator;
 
-
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("===== validate =====");
         System.out.println(validator.getClass());
 
-        Event event = new Event();
-        event.setLimit(-1);
-        event.setEmail("aaa2");
+        Event event = new Event(1, "title", -1, "aaa2");
 
         // 스프링 부트에 등록된 Bean Validation 을 사용하기 위해 EventValidator 를 주석 처리한다.
         // EventValidator eventValidator = new EventValidator();
