@@ -1,4 +1,4 @@
-package me.hangyeol.springbookservice.spel;
+package me.hangyeol.springbookservice.expressionlanguage;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
@@ -8,8 +8,12 @@ import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.stereotype.Component;
 
+/**
+ * Section4. Spring Expression Language
+ * SpEL
+ */
 @Component
-public class AppRunner8 implements ApplicationRunner {
+public class ExpressionLanguageRunner implements ApplicationRunner {
 
     @Value("#{1 + 1}")
     int value;

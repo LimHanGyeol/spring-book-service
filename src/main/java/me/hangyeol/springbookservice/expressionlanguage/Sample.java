@@ -1,7 +1,11 @@
-package me.hangyeol.springbookservice.spel;
+package me.hangyeol.springbookservice.expressionlanguage;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * Section4. Spring Expression Language
+ * SpEL
+ */
 @Component
 public class Sample {
 

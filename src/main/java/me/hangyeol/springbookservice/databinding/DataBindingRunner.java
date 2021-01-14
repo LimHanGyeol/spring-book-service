@@ -13,13 +13,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataBindingRunner implements ApplicationRunner {
 
-    @Autowired
-    ConversionService conversionService;
+//    @Autowired
+//    ConversionService conversionService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("===== ConversionService =====");
-        System.out.println(conversionService.getClass().toString());
-        System.out.println(conversionService);
+//        System.out.println(conversionService.getClass().toString());
+//        System.out.println(conversionService);
     }
 }
